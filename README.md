@@ -1,66 +1,67 @@
-# Sistema Bancário Simples
+# 🏦 Banco D'Paula - Sistema Bancário Simples
 
-Este projeto implementa um **Sistema Bancário Simples** com funcionalidades básicas, incluindo **saque**, **depósito** e **extrato**.
+Este projeto é um sistema bancário simples desenvolvido em Python. Ele permite que os usuários realizem operações básicas como saques, depósitos e visualização de extratos.
 
 ## 📌 Funcionalidades
 
-- Realizar **saques** dentro de um limite estabelecido.
-- Efetuar **depósitos** na conta.
-- Exibir um **extrato detalhado** das transações, incluindo data e hora.
-- Interface interativa via terminal com **menu dinâmico**, destacando a opção selecionada.
+- **Saque:** Permite ao usuário sacar um valor de sua conta, respeitando o limite de saque e o saldo disponível.
+- **Depósito:** Permite ao usuário depositar um valor em sua conta.
+- **Extrato:** Exibe o extrato das transações realizadas e o saldo atual.
+- **Sair:** Encerra o sistema bancário.
 
-## 📷 Demonstração
+## 📷 Menu de Operações
 
-### 📌 Interface do Menu
-![men1](img/menu.JPG)
+```plaintext
+╔═════════════════════════════════════════════╗
+║               BANCO D`PAULA                 ║
+╠═════════════════════════════════════════════╣
+║        Selecione uma operação no menu       ║
+╠═════════════════════════════════════════════╣
+║        1 - SAQUE                            ║
+║        2 - DEPÓSITO                         ║
+║        3 - EXTRATO                          ║
+║        4 - SAIR                             ║
+╚═════════════════════════════════════════════╝
+```
+## ⚙️ Regras de Negócio
+- **Limite de Saque**: O limite por saque é de R$ 500,00.
+- **Número de Saques**: O usuário pode realizar até 3 saques por dia.
+- **Validação de Valores**: O sistema valida se os valores informados para saque e depósito são positivos.
 
-### 📌 Seleção de Opções
+### Exemplo de Uso
+  1. 🏧 Saque:
 
-![menu2](img/menu3.JPG)
-<!-- ![menu3](img/menu2.JPG) -->
+        - O usuário seleciona a opção 1.
+        - Informa o valor do saque.
+        - O sistema verifica se o valor é válido, se está dentro do limite e se o usuário possui saldo suficiente.
+        - Se todas as condições forem atendidas, o valor é debitado do saldo e registrado no extrato.
+  2. 💰 Depósito:
 
-## 🛠️ Tecnologias Utilizadas
+        - O usuário seleciona a opção 2.
+        - Informa o valor do depósito.
+        - O sistema verifica se o valor é válido.
+        - Se o valor for válido, ele é creditado no saldo e registrado no extrato.
+  3. 📝 Extrato:
 
-- **Python** (versão 3.x)
-- **Colorama** para destacar opções do menu
-- **Os** para limpar a tela no terminal
-- **Datetime** para registrar data e hora das transações
+        - O usuário seleciona a opção 3.
+        - O sistema exibe o extrato das transações realizadas e o saldo atual.
+  4. 🚪 Sair:
 
-## 🏦 Estrutura do Código
+        - O usuário seleciona a opção 4.
+        - O sistema encerra a execução.
 
-### 🔹 Classe `ContaBancaria`
-
-A classe `ContaBancaria` gerencia as operações bancárias, incluindo saque, depósito e extrato.
-
-```python
-class ContaBancaria:
-    def __init__(self, saldo=0.0, limite=500.0, limite_saques=3):
-        self.saldo = saldo
-        self.limite = limite
-        self.limite_saques = limite_saques
-        self.numero_saques = 0
-        self.extrato = []
+### Como Executar
+1. Certifique-se de ter o Python instalado em seu sistema.
+2. Execute o script conta_bancaria-v1.py em um terminal ou prompt de comando:
+```bash
+python conta_bancaria-v1.py
 ```
 
-### 🔹 Menu Dinâmico
 
-O menu exibe as opções de forma interativa e destaca a opção selecionada.
+## 🚀 Conclusão
+Este projeto faz parte do bootcamp **Suzano - Python Developer** oferecido pela ***Digital Innovation One*** (DIO). Durante o desenvolvimento deste sistema bancário, foram aplicados conceitos fundamentais de programação em Python, como controle de fluxo, manipulação de strings, e tratamento de exceções. Além disso, foi possível praticar a criação de interfaces de usuário baseadas em texto e a implementação de regras de negócio simples.
 
-```python
-def exibir_menu(opcao_selecionada=None):
-    print(f'║ {(Fore.GREEN if opcao_selecionada == "1" else "")}1 - SAQUE{Style.RESET_ALL} │')
-    print(f'║ {(Fore.GREEN if opcao_selecionada == "2" else "")}2 - DEPÓSITO{Style.RESET_ALL} │')
-    print(f'║ {(Fore.GREEN if opcao_selecionada == "3" else "")}3 - EXTRATO{Style.RESET_ALL} │')
-    print(f'║ {(Fore.RED if opcao_selecionada == "4" else "")}4 - SAIR{Style.RESET_ALL} │')
-```
+### 📄 Licença
+Este projeto está sob a licença MIT. Sinta-se livre para modificá-lo e usá-lo conforme necessário.
 
-## 📌 Melhorias Futuras
-
-- Implementação de **múltiplas contas**.
-- Armazenamento das transações em um **banco de dados**.
-- Interface gráfica para melhor experiência do usuário.
-
----
-🚀 Desenvolvido por **Alanderson de Paula**
-
-
+<br><br><br> Desenvolvido com 💙 por Alanderson de Paula
