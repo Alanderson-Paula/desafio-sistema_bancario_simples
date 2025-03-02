@@ -61,5 +61,5 @@ def exibir_menu(opcao_selecionada=None):
 - Interface gráfica para melhor experiência do usuário.
 
 ---
-🚀 Desenvolvido por **Alanderson de Paula**
+<br><br><br> Desenvolvido com 💙 por Alanderson de Paula
 
